@@ -29,6 +29,8 @@ public static class Extensions
 
         builder.Services.ConfigureHttpClientDefaults(http =>
         {
+            // Turn on resilience by default
+            // http.AddStandardResilienceHandler();
             http.AddResilienceHandler("custom", builder =>
             {
                 // See: https://www.pollydocs.org/strategies/retry.html
